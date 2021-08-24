@@ -6,7 +6,7 @@ describe("Manager", () => {
         it("Should setup office number via constructor", () => {
             const testOffice = 10;
             const manager1 = new Manager("John",100,"test@test.com",testOffice)
-            expect(manager1.officeNumber).toBe(testOffice)
+            expect(manager1.office).toBe(testOffice)
         });
     });
 
@@ -21,8 +21,8 @@ describe("Manager", () => {
     describe("getOffice", () => {
         it("getOffice should return office number", () => {
             const testOffice = 10;
-            const manager1 = new Manager("John",100,"test@test.com",testOffice)
-            expect(engineer1.getOffice()).toBe(testOffice)
+            const manager2 = new Manager("John",100,"test@test.com",testOffice)
+            expect(manager2.getOffice()).toBe(testOffice)
         });
     });
 });

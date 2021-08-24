@@ -58,7 +58,7 @@ describe("Employee", () => {
 
     describe("getRole()", () => {
         it("The getRole() function works", () => {
-            const testRole = "employee";
+            const testRole = "Employee";
             const employee1 = new Employee("John",100,"test@test.com");
             expect(employee1.getRole()).toBe(testRole);
         });

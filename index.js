@@ -4,17 +4,17 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs")
-//needed?
+
 const path = require('path')
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
-//HTML builder --STILL NEEDS TO BE BUILT
+//HTML builder
 const builder = require("./src/generateHTML")
 //empty array that can store the team members in, Name ID and Email are in every array becase each array becasue that information is prevalent to every employee 
 const teamArray = [];
-
+///makes the team
 function makeTeam() {
     fs.writeFile(outputPath, builder(teamArray), function(err) {
         if (err) { 
@@ -181,5 +181,5 @@ function next() {
         }
     }))
 }
-
+//start!
 init();

@@ -34,6 +34,24 @@ template = replacePlaceholder(template,"id",manager.getId());
 template = replacePlaceholder(template, "officeNumber",manager.getOffice());
 return template;
 }
+//Render Intern
+const renderIntern = intern => {
+let template = fs.readFileSync(path.resolve(templatesDir, 'Intern.html'),"utf8");
+template = replacePlaceholder(template,"name",intern.getName());
+template = replacePlaceholder(template,"role",intern.getRole());
+template = replacePlaceholder(template, "email",intern.getEmail());
+template = replacePlaceholder(template,"id",intern.getId());
+template = replacePlaceholder(template, "school",intern.getSchool());
+return template;
+}
+
+
+
+///Render Engineer
+
+
+
+
 
 const buildMain = html => {
   const template = fs.readFileSync(path.resolve(templatesDir, "main.html"), "utf8");

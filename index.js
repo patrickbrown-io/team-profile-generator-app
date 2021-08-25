@@ -7,10 +7,22 @@ const fs = require("fs")
 //needed?
 const path = require('path')
 
+const OUTPUT_DIR = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
+
 //HTML builder --STILL NEEDS TO BE BUILT
 const builder = require("./src/generateHTML")
 //empty array that can store the team members in, Name ID and Email are in every array becase each array becasue that information is prevalent to every employee 
 const teamArray = [];
+
+function makeTeam() {
+    fs.writeFile(outputPath, builder(teamArray), function(err) {
+        if (err) { 
+            return console.log(err)
+        }
+    })
+}
+
 
 
 //////QUESTIONS
@@ -164,7 +176,10 @@ function next() {
                 console.log(teamArray)
                 console.log("Now creating your team...")
                 ////////FUNCTION TO MAKE TEAM NEEDED HERE
+                makeTeam();
+                console.log('Completed!')
         }
     }))
 }
+
 init();

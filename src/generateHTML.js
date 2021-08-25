@@ -48,7 +48,15 @@ return template;
 
 
 ///Render Engineer
-
+const renderEngineer = engineer => {
+let template = fs.readFileSync(path.resolve(templatesDir, 'Engineer.html'),"utf8");
+template = replacePlaceholder(template,"name",engineer.getName());
+template = replacePlaceholder(template,"role",engineer.getRole());
+template = replacePlaceholder(template, "email",engineer.getEmail());
+template = replacePlaceholder(template,"id",engineer.getId());
+template = replacePlaceholder(template, "github",engineer.getGithub());
+return template;
+}
 
 
 
